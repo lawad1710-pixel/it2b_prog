@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    char pole[] = { 'a', 'b', 'c', 'd', 'e' };
+
+    srand(time(NULL));
+    int cislo = rand() % 5;
+    printf("Nahodny prvek je: %c\n", pole[cislo]);
+
+    return 0;
+}
