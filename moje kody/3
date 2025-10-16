@@ -13,3 +13,304 @@ int main()
  return 0;
 }
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+    int a = rand() % 11 + 5;
+    
+    printf ("%d", a);
+    
+    
+ return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+   srand(time(NULL));
+  for (int i = 0; i < 100; i++){
+    double y = (double)rand() / RAND_MAX;
+    printf ("%.100f\n", y);
+  }
+    
+ return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+   srand(time(NULL));
+  for (int i = 0; i < 100; i++){
+    double y = (double)rand() / RAND_MAX;
+    printf ("%.100f\n", y);
+    
+    if (y < 0.5){
+    printf ("zaokrouhleno na 0\n");
+    } else {
+    printf ("zaokrouhleno na 1\n");
+      }
+  }
+  
+  
+  
+ return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+  srand(time(NULL)); 
+   
+  int nuly = 0;
+  int jednicky = 0;
+  
+  int soucet = 0;
+  
+  for (int i = 0; i < 100; i++){
+    int y = rand() % 11 + 5;
+    soucet += y;
+    printf ("%.d\n", y);
+    
+    if (y < 5){
+    printf ("cislo zaokrouhleno na 0\n");
+    nuly++;
+    } else {
+    printf ("cislo zaokrouhleno na 10\n");
+    jednicky++;
+      }
+  }
+  
+ int prumer = soucet / 100;
+ 
+ printf ("-----------------------\n");
+ printf ("pocet cisel zaokrouhlenyh na 0: %d\n", nuly);
+ printf ("pocet cisel zaokrouhlenyh na 1: %d\n", jednicky);
+ 
+ printf ("prumer je:%d\n", prumer);
+ return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+  srand(time(NULL)); 
+   
+  int nuly = 0;
+  int jednicky = 0;
+  
+  int soucet = 0;
+  
+  for (int i = 0; i < 100; i++){
+    int y = rand() % 11 + 5;
+    soucet += y;
+    printf ("%.d\n", y);
+    
+    if (y < 5){
+    printf ("cislo zaokrouhleno na 0\n");
+    nuly++;
+    } else {
+    printf ("cislo zaokrouhleno na 10\n");
+    jednicky++;
+      }
+  }
+  
+ int prumer = soucet / 100;
+ 
+ printf ("-----------------------\n");
+ printf ("pocet cisel zaokrouhlenyh na 0: %d\n", nuly);
+ printf ("pocet cisel zaokrouhlenyh na 1: %d\n", jednicky);
+ 
+ printf ("prumer je:%d\n", prumer);
+ return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+// Napiš program, který:
+// Vygeneruje 10 náhodných celých čísel 0–9
+// Uloží je do pole
+// Vypíše, jestli je číslo sudé nebo liché
+// Vypočítá a vypíše součet a průměr čísel
+// Spočítá odmocninu ze součtu čísel pomocí sqrt() z math.h
+int main()
+{
+  srand(time(NULL));
+  int pole[10];
+  
+  int soucet = 0;
+  
+  for (int i = 0; i < 10; i++){
+    pole[i] = rand() % 10;
+    printf ("%d\n", pole[i]);
+    soucet += pole[i];
+    
+    if (pole[i] % 2 == 0){
+      printf ("cislo je sude\n");
+    } else {
+      printf ("cislo je liche\n");
+    }
+  }
+  printf ("---------------\n");
+  printf ("soucet je: %d\n", soucet);
+  
+  double prumer = (double)soucet / 10;
+  printf ("prumer je: %.1f\n", prumer);
+  
+  double odmocnina = sqrt((double)soucet);
+  printf ("odmocnina je: %f\n", odmocnina);
+
+ return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// Vygeneruje 50 náhodných celých čísel mezi 1–20
+// Uloží je do pole
+// Pro každé číslo vypíše:
+// zda je menší než 10 nebo větší nebo rovno 10
+// Spočítá a vypíše:
+// součet všech čísel
+// průměr čísel
+// největší a nejmenší číslo
+int main()
+{
+  srand(time(NULL));
+  int pole[50];
+  int soucet = 0;
+  
+  for (int i = 0; i < 50; i++){
+    pole[i] = rand() % 20 + 1;
+    printf ("%d\n", pole[i]);
+    soucet += pole[i];
+    
+    if (pole[i] < 10){
+      printf ("cislo je mensi nez 10\n");
+    } else if (pole[i] > 10){
+      printf ("cislo je vetsi nez 10\n");
+    } else {
+      printf ("cislo je 10\n");
+    }
+  }
+  
+  int max = pole[0];
+  int min = pole[0];
+  
+
+  printf ("------------------------\n");
+  printf ("soucet je: %d\n", soucet);
+  
+  float prumer = (float)soucet / 50;
+  printf ("prumer je: %f\n", prumer);
+  
+  
+  
+  for (int i = 0; i < 50; i++){
+    if (pole[i] < min){
+       min = pole[i];
+        }
+        if (pole[i] > max) {
+            max = pole[i];
+        }
+    }
+  
+  printf("Nejmensi cislo: %d\n", min);
+  printf("Nejvetsi cislo: %d\n", max);
+  
+ return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+//Napiš program, který:
+//Vygeneruje 24 náhodných teplot (pro každou hodinu dne).
+//Teploty budou v rozsahu od -5 do 30 °C
+//Uloží je do pole teploty[24]
+//Vypíše všechny teploty s informací, zda je:
+  //pod nulou ❄️
+  //nad nulou ☀️
+//Spočítá:
+  //nejnižší teplotu
+  //nejvyšší teplotu
+  //průměrnou denní teplotu
+int main()
+{
+  srand(time(NULL));
+  int pole[24];
+  int soucet = 0;
+  
+  for (int i = 0; i < 24; i++){
+  pole[i] = rand() % 36 - 5;
+  printf ("%d\n", pole[i]);
+  
+  soucet += pole[i];
+  
+  if (pole[i] < 0){
+    printf ("teplota je pod nulou\n");
+  } else if (pole[i] > 0){
+    printf ("teplota je nad nulou\n");
+  } else {
+    printf ("teplota je nula\n");
+    }
+  }
+  
+  int min = pole[0];
+  int max = pole[0];
+  
+ for (int i = 0; i < 24; i++){
+   if (pole[i] < min){
+     min = pole[i];
+   }
+   if (pole[i] > max){
+     max = pole[i];
+   }
+ }
+ printf ("------------------------\n");
+   printf ("minimalni teplota je:%d\n", min);
+   printf ("maximalni teplota je:%d\n", max);
+   float prumer = (float)soucet / 24;
+   printf ("prumer teplot je: %f\n", prumer);
+ return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
